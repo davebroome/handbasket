@@ -1,0 +1,21 @@
+{
+    "manifest_version": 2,
+
+    "name": "Handbasket",
+    "version": "1.0",
+    "description": "Place an item in your basket at Notonthehighstreet.com.",
+
+    "background": { "scripts": ["background.js"] },
+    "content_scripts": [{
+        "matches": ["*://*.notonthehighstreet.com/*", "*://*.noths.com/*"],
+        "js": ["content_script.js"]
+    }],
+
+    "page_action": {
+        "default_icon": "cart.png",
+        "default_title": "Put an item in my basket"
+    },
+
+    // To listen for URL changes
+    "permissions": ["tabs"]
+}
